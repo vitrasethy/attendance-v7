@@ -15,7 +15,7 @@ class ClassroomController extends Controller
     {
         if (auth()->user()->isAdmin) {
             return Classroom::with('user')
-                ->all();
+                ->get();
         }
 
         return Classroom::with('user')
