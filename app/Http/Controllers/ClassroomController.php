@@ -14,7 +14,8 @@ class ClassroomController extends Controller
     public function index()
     {
         if (auth()->user()->isAdmin) {
-            return Classroom::all();
+            return Classroom::with('user')
+                ->all();
         }
 
         return Classroom::with('user')
